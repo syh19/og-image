@@ -50,7 +50,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script defer data-domain="plausible.sylwair.com" src="http://sylwaircom-plausible-f35b3c-192-210-161-212.traefik.me/js/script.js"></script>
+      <script defer data-domain="og.sylwair.com" src="https://plausible.sylwair.com/js/script.js"></script>
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider
