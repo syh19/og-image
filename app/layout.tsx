@@ -49,6 +49,9 @@ export default async function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <script defer data-domain="plausible.sylwair.com" src="http://sylwaircom-plausible-f35b3c-192-210-161-212.traefik.me/js/script.js"></script>
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider
           attribute="class"

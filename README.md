@@ -1,4 +1,4 @@
-# imgsrc-app
+# og-image
 
 ## Development
 

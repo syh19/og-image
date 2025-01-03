@@ -1,9 +1,9 @@
 {
-  "name": "imgsrc-app",
+  "name": "og-image",
   "version": "0.1.0",
   "license": "MIT",
-  "homepage": "https://imgsrc.io",
-  "author": "Fady Abdelmalik <support@imgsrc.io>",
+  "homepage": "https://og.sylwair.com",
+  "author": "sylwair",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
