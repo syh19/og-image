@@ -16,6 +16,8 @@ import { AnalyticsIndex } from "@/components/analytics/index"
 import { ModeToggle } from "@/components/mode-toggle"
 import { MobileNav } from "@/components/nav/mobile-nav"
 import { ThemeProvider } from "@/components/theme-provider"
+import { FaXTwitter } from "react-icons/fa6"
+import { SiBluesky } from "react-icons/si"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://og.sylwair.com"),
@@ -60,14 +62,15 @@ export default async function RootLayout({
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <div className="flex items-center space-x-4">
               <div>
-                <Link href="/">
+                <Link href="/" className="flex items-center space-x-2">
                   <Image
                     className="block dark:hidden"
                     src="/logo.svg"
-                    alt="imgsrc Logo"
+                    alt="Open Graph Image Generator Logo"
                     width={36}
                     height={36}
                   />
+                  <span className="font-mono font-semibold text-xl">Open Graph Image Generator</span>
                 </Link>
 
                 <Link href="/">
@@ -83,9 +86,14 @@ export default async function RootLayout({
             </div>
 
             <div className="hidden space-x-2 sm:flex">
-              <Button variant="link">
-                <Link href="#" target="_blank">
-                  Support
+              <Button variant="link" size="icon" asChild>
+                <Link href="https://x.com/sylwair" target="_blank">
+                  <FaXTwitter className="h-5 w-5" />
+                </Link>
+              </Button>
+              <Button variant="link" size="icon" asChild>
+                <Link href="https://bsky.app/profile/sylwair.bsky.social" target="_blank">
+                  <SiBluesky className="h-5 w-5" />
                 </Link>
               </Button>
 
@@ -108,49 +116,48 @@ export default async function RootLayout({
 
           <footer className="mx-auto max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
             <div className="flex justify-between">
-              <div className="flex items-center space-x-2">
-                <div className="font-mono font-semibold">
-                  <Link href="https://sylwair.com">
-                    <img
-                      src="https://favicon.im/sylwair.com.png"
-                      alt="sylwair.com favicon"
-                      width={16}
-                      height={16}
-                    />
-                    Sylwair
-                  </Link>
-                </div>
+              <div className="flex items-center space-x-4">
+                <Link
+                  href="https://sylwair.com"
+                  className="flex items-center hover:underline"
+                >
+                  <img
+                    src="https://favicon.im/sylwair.com"
+                    alt="sylwair.com favicon"
+                    width={16}
+                    height={16}
+                    className="mr-1"
+                  />
+                  <span>Sylwair</span>
+                </Link>
 
-                <div>
-                  <Button variant="link" asChild>
-                    <Link href="/">Home</Link>
-                  </Button>
-
-                  <Button variant="link" asChild>
-                    <Link href="https://aifinder.site" target="_blank">
-                      <img
-                        src="https://favicon.im/aifinder.site.png"
-                        alt="aifinder.site favicon"
-                        width={16}
-                        height={16}
-                      />
-                      AIFinder.site
-                    </Link>
-                  </Button>
-                </div>
+                <Link
+                  href="https://aifinder.site"
+                  target="_blank"
+                  className="flex items-center hover:underline"
+                >
+                  <img
+                    src="https://favicon.im/aifinder.site"
+                    alt="aifinder.site favicon"
+                    width={16}
+                    height={16}
+                    className="mr-1"
+                  />
+                  <span>AIFinder.site</span>
+                </Link>
               </div>
 
               {/* only shows on Desktop */}
               <div className="hidden items-center gap-x-2 md:inline-flex">
-                <svg
-                  className="h-2 w-2 fill-green-400"
-                  viewBox="0 0 6 6"
-                  aria-hidden="true"
-                >
-                  <circle cx={3} cy={3} r={3} />
-                </svg>
                 <span className="font-mono text-sm font-medium">
-                  Operational
+                  <a
+                    href="https://github.com/FadyMak/imgsrc-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    Modified from imgsrc
+                  </a>
                 </span>
               </div>
             </div>
