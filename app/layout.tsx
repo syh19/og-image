@@ -12,26 +12,27 @@ import { GeistSans } from "geist/font/sans"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Toaster } from "@/components/ui/sonner"
+import { AnalyticsIndex } from "@/components/analytics/index"
 import { ModeToggle } from "@/components/mode-toggle"
 import { MobileNav } from "@/components/nav/mobile-nav"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://imgsrc.io"),
-  title: "imgsrc",
+  metadataBase: new URL("https://og.sylwair.com"),
+  title: "og.sylwair.com",
   description: "Generate beautiful Open Graph images with zero effort.",
   openGraph: {
-    title: "imgsrc",
+    title: "og.sylwair.com",
     description: "Generate beautiful Open Graph images with zero effort.",
     type: "website",
-    url: "https://imgsrc.io",
-    siteName: "imgsrc",
+    url: "https://og.sylwair.com",
+    siteName: "og.sylwair.com",
     images: [
       {
-        url: "https://imgsrc.io/og.png",
+        url: "https://og.sylwair.com/og.png",
         width: 1200,
         height: 630,
-        alt: "imgsrc - Generate beautiful Open Graph images with zero effort.",
+        alt: "og.sylwair.com - Generate beautiful Open Graph images with zero effort.",
       },
     ],
     locale: "en_US",
@@ -49,9 +50,6 @@ export default async function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable}`}
       suppressHydrationWarning
     >
-      <head>
-      <script defer data-domain="og.sylwair.com" src="https://plausible.sylwair.com/js/script.js"></script>
-      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider
           attribute="class"
@@ -112,7 +110,15 @@ export default async function RootLayout({
             <div className="flex justify-between">
               <div className="flex items-center space-x-2">
                 <div className="font-mono font-semibold">
-                  <Link href="https://imgsrc.io">.imgsrc</Link>
+                  <Link href="https://sylwair.com">
+                    <img
+                      src="https://favicon.im/sylwair.com.png"
+                      alt="sylwair.com favicon"
+                      width={16}
+                      height={16}
+                    />
+                    Sylwair
+                  </Link>
                 </div>
 
                 <div>
@@ -121,8 +127,14 @@ export default async function RootLayout({
                   </Button>
 
                   <Button variant="link" asChild>
-                    <Link href="#" target="_blank">
-                      Support
+                    <Link href="https://aifinder.site" target="_blank">
+                      <img
+                        src="https://favicon.im/aifinder.site.png"
+                        alt="aifinder.site favicon"
+                        width={16}
+                        height={16}
+                      />
+                      AIFinder.site
                     </Link>
                   </Button>
                 </div>
@@ -149,6 +161,13 @@ export default async function RootLayout({
 
         <SpeedInsights />
         <Analytics />
+        {process.env.NODE_ENV === "development" ? (
+          <></>
+        ) : (
+          <>
+            <AnalyticsIndex />
+          </>
+        )}
       </body>
     </html>
   )
