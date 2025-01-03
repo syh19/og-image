@@ -28,18 +28,18 @@ export function MobileNav() {
         <SheetHeader className="pb-4 text-left">
           <SheetTitle>
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="imgsrc"
               width={32}
               height={32}
               className="block dark:hidden"
             />
             <Image
-              src="/logo_dark.svg"
-              alt="imgsrc"
+              src="/logo.png"
+              alt="Open Graph Image Generator Logo"
               width={32}
               height={32}
-              className="hidden dark:block"
+              className="hidden dark:block bg-white"
             />
           </SheetTitle>
         </SheetHeader>

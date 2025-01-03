@@ -8,6 +8,8 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
+import { FaXTwitter } from "react-icons/fa6"
+import { SiBluesky } from "react-icons/si"
 
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -16,8 +18,6 @@ import { AnalyticsIndex } from "@/components/analytics/index"
 import { ModeToggle } from "@/components/mode-toggle"
 import { MobileNav } from "@/components/nav/mobile-nav"
 import { ThemeProvider } from "@/components/theme-provider"
-import { FaXTwitter } from "react-icons/fa6"
-import { SiBluesky } from "react-icons/si"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://og.sylwair.com"),
@@ -65,23 +65,23 @@ export default async function RootLayout({
                 <Link href="/" className="flex items-center space-x-2">
                   <Image
                     className="block dark:hidden"
-                    src="/logo.svg"
+                    src="/logo.png"
                     alt="Open Graph Image Generator Logo"
                     width={36}
                     height={36}
                   />
-                  <span className="font-mono font-semibold text-xl">Open Graph Image Generator</span>
-                </Link>
-
-                <Link href="/">
                   <Image
-                    className="hidden dark:block"
-                    src="/logo_dark.svg"
-                    alt="imgsrc Logo"
+                    className="hidden rounded-full bg-white dark:block"
+                    src="/logo.png"
+                    alt="Open Graph Image Generator Logo"
                     width={36}
                     height={36}
                   />
+                  <span className="font-mono text-xl font-semibold">
+                    Open Graph Image Generator
+                  </span>
                 </Link>
+
               </div>
             </div>
 
@@ -92,7 +92,10 @@ export default async function RootLayout({
                 </Link>
               </Button>
               <Button variant="link" size="icon" asChild>
-                <Link href="https://bsky.app/profile/sylwair.bsky.social" target="_blank">
+                <Link
+                  href="https://bsky.app/profile/sylwair.bsky.social"
+                  target="_blank"
+                >
                   <SiBluesky className="h-5 w-5" />
                 </Link>
               </Button>
@@ -144,6 +147,20 @@ export default async function RootLayout({
                     className="mr-1"
                   />
                   <span>AIFinder.site</span>
+                </Link>
+                <Link
+                  href="https://emojisay.com"
+                  target="_blank"
+                  className="flex items-center hover:underline"
+                >
+                  <img
+                    src="https://favicon.im/emojisay.com"
+                    alt="emojisay favicon"
+                    width={16}
+                    height={16}
+                    className="mr-1"
+                  />
+                  <span>Emojisay</span>
                 </Link>
               </div>
 
